@@ -27,7 +27,7 @@
     Data <- lapply(Data,Tidy)
     Data
 
-#Removes special characters - Doesn't quite work...
+#Removes special characters - Need to write this
 
 
 #seperates out the columns
