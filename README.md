@@ -4,15 +4,15 @@
 
     library(c("tabulizer","xlsx","tidyr","plyr","dplyr","stringr"))
   
-## Set up the document to be read into the console 
+## Set up the document to be read into the console (Three variables for user to define: Name, MFurl2, MFPageno)
 
-    Name <- "Zigexn"
+    Name <- ""
     ExcelName <- paste0(Name,".xls")
-    MFurl2 <- 'http://contents.xj-storage.jp/xcontents/AS80135/c27634c9/1720/48b2/afa8/abc1710a32d4/140120180213470386.pdf'
+    MFurl2 <- ""
     get_n_pages(MFurl2)
     MFJap <- extract_tables(MFurl2, guess = F, encoding = "UTF-8")
 
-    MFPageno <- c(6,7)
+    MFPageno <- c()
     MFJap <- MFJap[MFPageno]
 
     Data <- MFJap
