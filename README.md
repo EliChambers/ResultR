@@ -1,6 +1,6 @@
 ## ResultR
 
-#Loads all the libraries needed
+# Loads all the libraries needed
 
     library(c("tabulizer","xlsx","tidyr","plyr","dplyr","stringr"))
   
@@ -17,7 +17,7 @@
 
     Data <- MFJap
 
-#Deletes first 6 rows of data as these typically are the messy text fields in .pdfs
+# Deletes first 6 rows of data as these typically are the messy text fields in .pdfs
 
     Tidy <- function(x){
      as.data.frame(x)
@@ -27,10 +27,10 @@
     Data <- lapply(Data,Tidy)
     Data
 
-#Removes special characters - Need to write this
+# Removes special characters - Need to write this
 
 
-#seperates out the columns
+# Seperates out the columns
 
     colseperate <- function(x){
       for (i in seq_along(x)){
@@ -67,18 +67,18 @@
           x
         }
 
-#Applies the colseperate function
+# Applies the colseperate function
 
       Data <- lapply(Data,as.data.frame)
       Data2 <- colseperate(Data)
 
-##Assigns each list to global environment
+## Assigns each list to global environment
 
       for (i in seq(Data2))
         assign(paste0("df", i), Data2[[i]])
 
 
-#call cols all same
+# Call cols all same
 
       cnames <- c("col1","col2","col3")
       colnames(df1) <- cnames
@@ -92,15 +92,15 @@
       Export <- rbind(Export,df3)
       Export <- rbind(Export,df4)
 
-#Exports to excel
+# Exports to excel
 
       write.xlsx(Export, file=ExcelName, sheetName="Statements", row.names=FALSE)
       rm(list=ls())
 
-## remove columns
+## Remove columns
 
       df4 <- subset(df4,select = -3)
 
-## add columns
+## Add columns
 
       df4 <- cbind(df1,"x")
