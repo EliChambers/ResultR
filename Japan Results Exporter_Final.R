@@ -8,7 +8,7 @@ library("stringr", lib.loc="~/R/win-library/3.4")
 Name <- ""
 ExcelName <- paste0(Name,".xls")
 MFurl2 <- ""
-get_n_pages(MFurl2)
+Pagecount <- get_n_pages(MFurl2)
 MFJap <- extract_tables(MFurl2, guess = F, encoding = "UTF-8")
 MFPageno <- c()
 MFJap <- MFJap[MFPageno]
