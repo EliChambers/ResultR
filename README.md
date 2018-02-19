@@ -1,13 +1,9 @@
 ## ResultR
 
 #Loads all the libraries needed
-    library("tabulizer", lib.loc="~/R/win-library/3.4")
-    library("xlsx", lib.loc="~/R/win-library/3.4")
-    library("tidyr", lib.loc="~/R/win-library/3.4")
-    library("plyr", lib.loc="~/R/win-library/3.4")
-    library("dplyr", lib.loc="~/R/win-library/3.4")
-    library("stringr", lib.loc="~/R/win-library/3.4")
 
+    library(c("tabulizer","xlsx","tidyr","plyr","dplyr","stringr"))
+  
 ## Set up the document to be read into the console 
 
     Name <- "Zigexn"
